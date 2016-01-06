@@ -1,3 +1,5 @@
+from qprint import *
+
 def get_capsule(source, left_shell, right_shell, starting_position=0):               # returns (chunk, start, end) where
     if left_shell in right_shell or right_shell in left_shell:                       # $chunk is the first chunk of $source, after $starting_position,
         raise Exception('Your shells contain each other. Illegal use.')              # that's encapsulated between $left_shell and $right_shell
