@@ -1,4 +1,5 @@
-from qprint import *
+from .qprint import *
+
 
 def get_capsule(source, left_shell, right_shell, starting_position=0):               # returns (chunk, start, end) where
     if left_shell in right_shell or right_shell in left_shell:                       # $chunk is the first chunk of $source, after $starting_position,
@@ -6,7 +7,6 @@ def get_capsule(source, left_shell, right_shell, starting_position=0):          
     else:                                                                            # (including the capsule) and $start is the index of the beginning of the core and $end its end.
         first_left_shell = source[starting_position:].find(left_shell)
         if first_left_shell == -1:                                                   # no left shells
-            qprint('No left shells on your capsule.', color=YELLOW)
             return -1
         else:
             current = starting_position + first_left_shell + len(left_shell)
